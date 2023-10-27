@@ -2,9 +2,10 @@ import networkx as nx
 import mbuild as mb
 import typing
 
+
 def gen_smarts(node : mb.compound.Compound, 
                G : nx.Graph, depth: int, 
-               node_trees: typing.dict[mb.compound.Compound, nx.classes.digraph.DiGraph]):
+               node_trees: typing.Dict[mb.compound.Compound, nx.classes.digraph.DiGraph]):
     if depth == 1:
         smarts = '[{};X{}]'.format(node.element.symbol, len(list(G.neighbors(node))))
         for neigh in G.neighbors(node):
