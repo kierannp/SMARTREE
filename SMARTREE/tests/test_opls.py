@@ -1,8 +1,13 @@
+from ..smart_tree import bond_graph_to_smarts_dic
 
+import mbuild as mb
+import networkx as nx
+import foyer
 
 class Test_OPLS:
     def test_o_xylene(self):
-        pass
+        mol = mb.load('../opls_validation/o-xylene.mol2')
+        smarts_dic = bond_graph_to_smarts_dic(BG = mol.bond_graph, depth=1)
     def test_14_butanediol(self):
         pass
     def test_cyclopentanone(self):
