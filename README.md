@@ -93,14 +93,14 @@ import networkx as nx
 import mbuild as mb
 import sTree
 
- smiles = "C(CO)NCCO" # Diethanolamine
+smiles = "C(CO)NCCO" # Diethanolamine
 
- mol = mb.load(smiles, smiles=True) # converts the smiles into a mb.Compound
+mol = mb.load(smiles, smiles=True) # converts the smiles into a mb.Compound
 
- BG = mol.bond_graph # the bond graph of our molecule, atoms connected by bonds represented as a Set of source atom to destination atoms
+BG = mol.bond_graph # the bond graph of our molecule, atoms connected by bonds represented as a Set of source atom to destination atoms
 
- depth = 2 # this parameter determines how large the smart tree should be generated, the larger the depth the more specific your SMARTS definition is, but the more expensive it is to atomtype 
- smarts_dict = sTree.bond_graph_to_smarts_dic(BG, depth) # returns our smarts in a dictionary with mb.Compound atoms as keys and the corresponding smarts as values
+depth = 2 # this parameter determines how large the smart tree should be generated, the larger the depth the more specific your SMARTS definition is, but the more expensive it is to atomtype 
+smarts_dict = sTree.bond_graph_to_smarts_dic(BG, depth) # returns our smarts in a dictionary with mb.Compound atoms as keys and the corresponding smarts as values
 
 ```
 
